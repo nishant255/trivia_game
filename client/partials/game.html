@@ -1,0 +1,21 @@
+<h1>Hi {{GC.user.name | titleCase}}!</h1>
+<div ng-if="GC.Questions === true">
+  <h3>Choose an answer for each of the questions and submit the test once done.</h3>
+  <h3>Good Luck!</h3>
+  <form ng-submit="GC.submitGame()">
+    <div ng-repeat ="question in GC.questions track by $index" class="gamebox">
+      <h3>{{$index + 1}}. {{question.question}}</h3>
+      <input type="radio" ng-model="GC.newGame.answer[$index]" name="Group{{$index}}" value="true" required>{{question.answer}}<br>
+      <input type="radio" ng-model="GC.newGame.answer[$index]" name="Group{{$index}}" value="fake1" >{{question.fake1}}<br>
+      <input type="radio" ng-model="GC.newGame.answer[$index]" name="Group{{$index}}" value="fake2" >{{question.fake2}}<br>
+      <br>
+    </div>
+    <br>
+    <input type="submit" value="Submit Game">
+    <a href="#!/">Cancel</a>
+  </form>
+</div>
+<div ng-if="GC.noQuestion === true">
+  <h3>Please Add Questions first to Play Game</h3>
+  <a href="#!/new_question">Add a Question</a>
+</div>

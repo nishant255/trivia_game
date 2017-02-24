@@ -1,0 +1,22 @@
+<nav>
+  <a href="#!/">Home</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#!/lets_play">Play Game</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#!/" ng-click="QC.logout()">Logout</a>
+</nav>
+<div>
+  <h1>New Question</h1>
+  <form ng-submit="QC.createQuestion()">
+    <label>Question</label><br>
+    <textarea rows="8" cols="80" ng-model="QC.newQuestion.question" placeholder="Please Enter a new Question" required></textarea><br><br>
+    <label>Correct Answer</label>
+    <input type="text" ng-model="QC.newQuestion.answer" placeholder="Correct Answer" required><br><br>
+    <label>Fake Answer 1</label>
+    <input type="text" ng-model="QC.newQuestion.fake1" placeholder="1st Fake Answer" required><br><br>
+    <label>Fake Answer 2</label>
+    <input type="text" ng-model="QC.newQuestion.fake2" placeholder="2nd Fake Answer" required><br><br>
+    <input type="submit" value="Add Question">
+    <a href="#!/">Cancel</a>
+  </form>
+</div>

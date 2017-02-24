@@ -1,0 +1,32 @@
+<nav>
+  <a href="#!/">Home</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#!/new_question">Add a Question</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#!/" ng-click="DC.logout()">Logout</a>
+</nav>
+<div class="wrapper">
+  <br><br><br>
+  <div class="play_game">
+    <br>
+    <a href="#!/lets_play">Play</a>
+    <p>Click on the Link to start the trivia game</p>
+  </div>
+  <p>Search User: <input type="text" ng-model="filter_name" placeholder="Filter User"></p>
+  <table id="user_table">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Score</td>
+        <td>Percentage</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "user in DC.users | filter: filter_name" >
+        <td>{{user.name | titleCase}}</td>
+        <td>{{user.score}}/{{DC.questions_length}}</td>
+        <td>{{user.percentage}}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
